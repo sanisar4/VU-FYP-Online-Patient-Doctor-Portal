@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 08, 2018 at 06:59 PM
+-- Generation Time: Oct 08, 2018 at 07:39 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.10
 
@@ -78,30 +78,34 @@ CREATE TABLE `schedule` (
 
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
+  `full_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `username` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `confirm_password` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gender` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `blood_group` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` enum('pending','approved','rejected') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'pending',
-  `phoneno` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL
+  `contact number` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `username`, `email`, `password`, `status`, `phoneno`) VALUES
-(15, 'Wahaad', 'wahaad@gmail.com', 'rob420', 'approved', ''),
-(18, 'Noor', 'noor@hotmail.com', 'manage', 'rejected', ''),
-(23, 'Hadi', 'hadi@gmail.com', 'as', 'approved', ''),
-(24, 'Nigar', 'nigar@gmail.com', 'zzz', 'pending', ''),
-(28, 'Iqra', 'iqra@hotmail.com', 'khush', 'rejected', ''),
-(38, 'Safian', 'safi@gmail.com', 've74be', 'approved', ''),
-(39, 'irfan', 'sanisar4@gmail.com', '123', 'approved', ''),
-(40, 'Maham', 'haya@hotmail.com', 'dosi', 'rejected', ''),
-(41, 'Mikaial', 'miki@hotmail.com', 'actor', 'pending', ''),
-(42, 'Asia', 'asi@hotmail.com', 'change', 'approved', ''),
-(43, 'Zahid', 'zadi@gmail.com', 'true', 'pending', ''),
-(44, 'marium', 'marium@gmail.com', 'jui', 'pending', '0418274484');
+INSERT INTO `user` (`id`, `full_name`, `username`, `email`, `password`, `confirm_password`, `gender`, `blood_group`, `status`, `contact number`) VALUES
+(15, '', 'Wahaad', 'wahaad@gmail.com', 'rob420', '0', '', '', 'approved', ''),
+(18, '', 'Noor', 'noor@hotmail.com', 'manage', '0', '', '', 'rejected', ''),
+(23, '', 'Hadi', 'hadi@gmail.com', 'as', '0', '', '', 'approved', ''),
+(24, '', 'Nigar', 'nigar@gmail.com', 'zzz', '0', '', '', 'pending', ''),
+(28, '', 'Iqra', 'iqra@hotmail.com', 'khush', '0', '', '', 'rejected', ''),
+(38, '', 'Safian', 'safi@gmail.com', 've74be', '0', '', '', 'approved', ''),
+(39, '', 'irfan', 'sanisar4@gmail.com', '123', '0', '', '', 'approved', ''),
+(40, '', 'Maham', 'haya@hotmail.com', 'dosi', '0', '', '', 'rejected', ''),
+(41, '', 'Mikaial', 'miki@hotmail.com', 'actor', '0', '', '', 'pending', ''),
+(42, '', 'Asia', 'asi@hotmail.com', 'change', '0', '', '', 'approved', ''),
+(43, '', 'Zahid', 'zadi@gmail.com', 'true', '0', '', '', 'pending', ''),
+(44, '', 'marium', 'marium@gmail.com', 'jui', '0', '', '', 'pending', '0418274484');
 
 --
 -- Indexes for dumped tables
