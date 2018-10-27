@@ -1,5 +1,5 @@
 <?php require('../connection.php'); ?>
-<?php if(isset($_SESSION['logedin']) and $_SESSION['logedin'] == TRUE) header( 'Location: users.php' ); ?>
+<?php if(isset($_SESSION['logedin']) and $_SESSION['logedin'] == TRUE) header( 'Location: patient.php' ); ?>
 <!doctype html>
 <html>
 
@@ -20,9 +20,9 @@
 			else if ( $result->num_rows == 1 ) {
 				$row = $result->fetch_assoc();
 				$_SESSION[ 'logedin' ] = TRUE;
-				$_SESSION[ 'user_id' ] = $row[ 'id' ];
+				$_SESSION[ 'patient_id' ] = $row[ 'id' ];
 
-				header( 'Location: users.php' );
+				header( 'Location: patient.php' );
 			} else {
 				echo "Error: Username does not match with the records in database <br>";
 
